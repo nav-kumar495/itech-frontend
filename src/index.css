@@ -1,0 +1,485 @@
+/* SCIQUS INFOTECH - LIGHT CORPORATE CSS DESIGN SYSTEM */
+
+:root {
+  /* Premium Clean Light Corporate Color Palette */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc; /* Slate-50 alternating panels */
+  --bg-tertiary: #f1f5f9;  /* Slate-100 card outlines */
+  --bg-copper: #0f1c30;    /* Solid Space Navy-Blue for Footer grounding */
+  --bg-copper-dark: #070e1b;
+  
+  /* Modern High-End Sapphire & Cyan Glow Accents (Instead of Brass Gold) */
+  --accent-gold: #2563eb; /* Royal Sapphire Blue */
+  --accent-gold-rgb: 37, 99, 235;
+  --accent-gold-glow: rgba(37, 99, 235, 0.08);
+  --accent-gold-bright: #1d4ed8;
+  --accent-copper: #0891b2; /* Vibrant Electric Cyan */
+  --accent-copper-glow: rgba(8, 145, 178, 0.1);
+
+  /* High Contrast Typography Colors (Light Mode) */
+  --text-primary: #0f172a;   /* Slate-900 for dark crisp headings */
+  --text-secondary: #334155; /* Slate-700 for highly readable paragraph text */
+  --text-muted: #64748b;     /* Slate-500 for secondary tags and labels */
+  --text-gold: #2563eb;      /* Vibrant sapphire blue for emphasis */
+
+  /* Sleek Minimalist Borders (Light Mode) */
+  --border-gold: rgba(37, 99, 235, 0.15);
+  --border-gold-strong: rgba(37, 99, 235, 0.4);
+  --border-dim: rgba(15, 23, 42, 0.08);
+  --border-dim-strong: rgba(15, 23, 42, 0.15);
+
+  /* Layout Constants */
+  --sidebar-width: 280px;
+  --transition-smooth: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-fast: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Fonts */
+  --font-display: 'Outfit', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
+}
+
+/* Base resets & structural styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-size: 16px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-gold);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* CINEMATIC NOISE GRAIN OVERLAY */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.012; /* Extremely subtle paper/grain texture for a premium tactile look */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Premium Typography Patterns */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.25em; /* Extremely wide tracking */
+  line-height: 1.2;
+}
+
+/* Narrative Serifs for literary ambiance */
+.narrative-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.35rem;
+}
+
+.narrative-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--text-primary);
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* General Layout Structures */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Desktop Split Layout */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  width: calc(100% - var(--sidebar-width));
+  position: relative;
+  z-index: 10;
+}
+
+/* Sidebar Styling (Desktop Light Mode) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-dim);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 30px;
+  height: 100vh;
+  transition: var(--transition-smooth);
+}
+
+/* Sidebar Logo / Branding */
+.sidebar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+.logo-main {
+  font-size: 1.8rem;
+  font-weight: 200;
+  letter-spacing: 0.25em;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.logo-sub {
+  font-size: 0.6rem;
+  letter-spacing: 0.35em;
+  color: var(--text-gold);
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* Sidebar Navigation Link Styles */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.nav-item {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: var(--transition-fast);
+  padding: 8px 0;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--accent-gold);
+  transition: var(--transition-fast);
+}
+
+.nav-item:hover {
+  color: var(--text-primary);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-item.active {
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
+/* Sidebar Footer / Contact Details */
+.sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-dim);
+  padding-top: 25px;
+}
+
+.sidebar-footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-footer-link:hover {
+  color: var(--accent-gold);
+}
+
+/* Mobile Header (Hidden on Desktop) - Frosted White Glass */
+.mobile-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-gold);
+  z-index: 90;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: var(--accent-gold);
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.hamburger-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Ambient Radial Lighting Sconces (Behind content for glowing bar mood) */
+.ambient-glow-top {
+  position: absolute;
+  top: -10%;
+  right: 10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ambient-glow-bottom {
+  position: absolute;
+  bottom: 10%;
+  left: -5%;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(8, 145, 178, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Premium Buttons Styling */
+.btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  background: transparent;
+  border: 1px solid var(--border-gold-strong);
+  color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-gold);
+  z-index: -1;
+  transform: translateY(100%);
+  transition: var(--transition-smooth);
+}
+
+.btn-premium:hover {
+  color: var(--bg-primary) !important;
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 20px var(--accent-gold-glow);
+}
+
+.btn-premium:hover::before {
+  transform: translateY(0);
+}
+
+.btn-premium-alt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  background: transparent;
+  border: 1px solid var(--border-dim-strong);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  position: relative;
+  font-weight: 500;
+}
+
+.btn-premium-alt:hover {
+  border-color: var(--text-primary);
+  background-color: rgba(15, 23, 42, 0.04);
+}
+
+/* Shared Premium Section Styling */
+.section-premium {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 80px;
+  border-bottom: 1px solid var(--border-dim);
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* Letterbox Cutout Aperture Style (From 11elevenbar.com Menu & Footer) */
+.aperture-header {
+  position: relative;
+  width: 100%;
+  height: 160px; /* Letterbox cutout window exposing background parallax motion */
+  overflow: hidden;
+  background: transparent;
+  border-bottom: 1px solid var(--border-gold);
+}
+
+.aperture-bg {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background-image: url('./assets/tech_hero.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.15;
+  filter: grayscale(10%) contrast(110%);
+}
+
+.aperture-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aperture-title {
+  font-size: 1.1rem;
+  letter-spacing: 0.4em;
+  color: var(--accent-gold);
+  font-weight: 500;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 300px;
+    background-color: var(--bg-primary);
+    box-shadow: 10px 0 30px rgba(15, 23, 42, 0.15);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding-top: 70px; /* Offset mobile header */
+  }
+
+  .mobile-header {
+    display: flex;
+  }
+
+  .section-premium {
+    padding: 80px 40px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-premium {
+    padding: 60px 20px;
+  }
+  
+  .narrative-italic {
+    font-size: 1.15rem;
+  }
+}
