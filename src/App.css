@@ -495,7 +495,7 @@
    CONTAINER 5: Parallax Engagement & Glassmorphism Box (Light Mode)
    ========================================================================== */
 .container-reservations {
-  background-image: linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)), url('./assets/tech_hero.png');
+  background-image: linear-gradient(rgba(248, 250, 252, 0.9), rgba(248, 250, 252, 0.9)), url('./assets/us_hero.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

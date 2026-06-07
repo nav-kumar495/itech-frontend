@@ -21,17 +21,13 @@ import {
 } from 'lucide-react';
 import './App.css';
 
-// iTech Robotics & Automation — Real Company Images
-import irHero      from './assets/ir_hero.png';
-import irAbout     from './assets/ir_about.png';
-import irArcWeld   from './assets/ir_arc_welding.png';
-import irSpotWeld  from './assets/ir_spot_welding.png';
-import irHandling  from './assets/ir_handling.png';
-import irManip     from './assets/ir_manipulator.png';
-import irVision    from './assets/ir_vision.png';
-import irBattery   from './assets/ir_battery.png';
-import irSpm       from './assets/ir_spm.png';
-import irPressLine from './assets/ir_press_line.png';
+// Unique Schools LLP — Brand Images
+import usHero      from './assets/us_hero.png';
+import usAbout     from './assets/us_about.png';
+import usApp       from './assets/us_app.png';
+import usMonitor   from './assets/us_monitor.png';
+import usSites     from './assets/us_sites.png';
+import usDiary     from './assets/us_diary.png';
 import irWorldMap  from './assets/world_map.svg';
 
 // Premium Custom Brand SVGs
@@ -77,8 +73,8 @@ function App() {
     email: '',
     phone: '',
     date: '',
-    time: 'Robotic Welding',
-    guests: 'Medium Volume',
+    time: 'us app',
+    guests: '200-500 Students',
     notes: ''
   });
   const [resSubmitted, setResSubmitted] = useState(false);
@@ -89,13 +85,13 @@ function App() {
     email: '',
     phone: '',
     date: '',
-    guests: '₹20 Lakhs - ₹1 Crore',
+    guests: '200-500 Students',
     details: ''
   });
   const [hireSubmitted, setHireSubmitted] = useState(false);
 
   // Gallery Interactive Tab Category
-  const [galleryCategory, setGalleryCategory] = useState('automotive');
+  const [galleryCategory, setGalleryCategory] = useState('parents');
 
   // Career Job Accordion Active ID
   const [activeCareerAccordion, setActiveCareerAccordion] = useState(-1);
@@ -106,31 +102,31 @@ function App() {
     name: '',
     email: '',
     phone: '',
-    role: 'PLC Programmer',
-    experience: '3-5 Years',
+    role: 'Full-Stack Engineer',
+    experience: '3+ Years',
     details: ''
   });
   const [careerSubmitted, setCareerSubmitted] = useState(false);
 
-  // Carousel Slides (Container 1) — Real iRobotics images
+  // Carousel Slides (Container 1) — Unique Schools brand images
   const slides = [
     {
-      tag: "Robotics & Automation",
-      title: "ITECH ROBOTICS",
-      desc: "Transforming factory production lines. Manufacturing cutting-edge robotic welding cells and bespoke automation setups for modern enterprises.",
-      img: irHero
+      tag: "School Communication App",
+      title: "US APP PLATFORM",
+      desc: "Centralize school-home communications. Digital permission slips, news, calendar events, and payments, all within a custom-branded mobile application.",
+      img: usHero
     },
     {
-      tag: "Precision Engineering",
-      title: "ARC WELDING CELLS",
-      desc: "High-accuracy robotic arc welding lines built for two-wheelers, four-wheelers, railway components, heavy fabrication, and oil & gas industries.",
-      img: irArcWeld
+      tag: "Administrative Control",
+      title: "US MONITOR SYSTEM",
+      desc: "Simplify administrative duties outside the classroom. Track attendance, manage policies, and control parent forms in real time.",
+      img: usMonitor
     },
     {
-      tag: "EV Battery Assembly",
-      title: "BATTERY AUTOMATION",
-      desc: "Deploying high-speed cell sorting, advanced laser welding, and dynamic battery pack assembly automation built to global standards.",
-      img: irBattery
+      tag: "Student Wellbeing & Resilience",
+      title: "US DIARY PROGRAMME",
+      desc: "Support student wellbeing and resilience. Combining custom printed resilience student diaries with digital classroom resources.",
+      img: usDiary
     }
   ];
 
@@ -138,70 +134,70 @@ function App() {
   const originStorySegments = [
     {
       title: "Observed Bottlenecks",
-      text: "In modern manufacturing lines, a recurring failure point emerged. Rigid setups, manual welding inconsistencies, and slow material handling bottlenecked production and compromised precision. Patching fixtures was common; resolving underlying automation was rare.",
-      quote: "Inefficient production is the tax of manual shortcuts."
+      text: "Traditional schools rely on disjointed, paper-based communications. Physical notes get lost, consent forms go unsigned, fee collections lag, and school secretaries spend up to 20 hours a week chasing paperwork rather than supporting teachers.",
+      quote: "Administrative friction takes valuable focus away from classroom learning."
     },
     {
-      title: "The Automation Shift",
-      text: "By studying industrial lines under extreme manufacturing demands, we realized that factory systems must be intelligent, adaptable, and designed with high structural integrity to maximize throughput and ensure consistent quality.",
-      quote: "Automation must adapt dynamically to achieve peak precision."
+      title: "The Digital Solution",
+      text: "By designing custom-branded school apps and integrated staff dashboards, we join things up. Parents sign forms, pay fees, and read urgent notices instantly on their mobile devices, creating seamless digital workflows.",
+      quote: "Modern technology must bridge the communication gap between home and school."
     },
     {
-      title: "The iTech Vision",
-      text: "iTech Robotics and Automation Pvt. Ltd. was founded to provide advanced automation solutions. We engineer heavy-duty robotic welding cells, precise custom handling manipulators, and high-speed EV battery lines that let factories grow without limits.",
-      quote: "World-class robotics is not accidental; it is engineered."
+      title: "The Unique Schools Vision",
+      text: "Unique Schools was established to provide custom-tailored digital tools for schools. Tested in over 140 schools in Ireland, our platforms replace paper trails with simple, positive, human interactions that keep the entire community connected.",
+      quote: "We simplify the details outside the classroom so you can focus on the learning inside it."
     }
   ];
 
-  // Engineering Core Services (Container 3) — Real iRobotics product images
+  // Unique Schools Core Services (Container 3)
   const services = [
     {
       id: 1,
-      name: "Arc Welding Automation",
-      price: "High Precision",
-      ingredients: "Robotic Welding Cells, Multi-axis positioners, Advanced seam tracking, Torch cleaning stations",
-      desc: "Architecting high-speed, zero-defect automated arc welding cells that deliver flawless weld joints on demanding cycles.",
-      img: irArcWeld
+      name: "us app",
+      price: "Central Hub",
+      ingredients: "Digital Permission Slips, Absentee Notes, Fee Payments, School News & Calendars",
+      desc: "A custom-branded mobile application for your school, centralizing all interactions between parents, teachers, and students.",
+      img: usApp
     },
     {
       id: 2,
-      name: "Spot Welding Automation",
-      price: "High Throughput",
-      ingredients: "Pneumatic/Servo guns, Heavy-payload robots, Multi-weld control panels, Automated tip dressers",
-      desc: "Engineering high-efficiency spot welding cells optimized for automotive structures and high-speed sheet metal assemblies.",
-      img: irSpotWeld
+      name: "us monitor",
+      price: "Admin Portal",
+      ingredients: "Detention Management, Digital Form Audits, School-wide Communications, Attendance Tracking",
+      desc: "Simplify administrative tasks outside the classroom. Track submissions, manage policies, and audit data with ease.",
+      img: usMonitor
     },
     {
       id: 3,
-      name: "Material Handling Automation",
-      price: "Seamless Flow",
-      ingredients: "Pick & place systems, Smart conveyor grids, Palletizing grippers, Autonomous mobile integration",
-      desc: "Designing automated material transfer pipelines capable of moving, sorting, and palletizing components instantly on the floor.",
-      img: irHandling
+      name: "us sites",
+      price: "Web Presence",
+      ingredients: "Secure Hosting, Custom Domain, Dynamic Calendars, Mobile-Optimized Portals",
+      desc: "Beautifully designed school websites that act as the front face of your institution, fully integrated with your mobile app.",
+      img: usSites
     },
     {
       id: 4,
-      name: "Customize Handling Manipulator",
-      price: "Bespoke Load",
-      ingredients: "Pneumatic balancers, Smart ergonomic grippers, Overhead rail suspensions, Custom safety interlocks",
-      desc: "Designing custom industrial manipulators to safely lift, rotate, and position complex payloads with minimal effort.",
-      img: irManip
+      name: "us diary",
+      price: "Student Wellbeing",
+      ingredients: "Resilience student diaries, Wellbeing planners, Hero wristband integrations, Monthly spot prizes",
+      desc: "Custom school diaries integrated with resilience activities to support student mental health and daily planning.",
+      img: usDiary
     },
     {
       id: 5,
-      name: "Vision & Inspection Systems",
-      price: "100% Quality",
-      ingredients: "High-resolution cameras, AI defect detection, Real-time telemetry logs, Smart sorting actuators",
-      desc: "Deploying intelligent optical inspection stations and semantic quality check algorithms to audit every part on the fly.",
-      img: irVision
+      name: "Be A Hero Resilience Programme",
+      price: "8-Month Initiative",
+      ingredients: "Resilience Student Diary, Free Hero wristbands, Monthly challenges, Teacher resources",
+      desc: "An integrated resilience and wellbeing programme designed to build student self-esteem, focus, and strength.",
+      img: usAbout
     },
     {
       id: 6,
-      name: "Battery Assembly Automation",
-      price: "Next-Gen EV",
-      ingredients: "Cell sorting nodes, Laser welding grids, Thermal compound dispensing, BMS testing bays",
-      desc: "Crafting highly secure, advanced battery pack assembly lines with fluid micro-automation across all manufacturing stages.",
-      img: irBattery
+      name: "Premium Support SLAs",
+      price: "24-Hour Response",
+      ingredients: "Parent support desk, Staff ticket management, App troubleshooting, Feature updates",
+      desc: "Dedicated support email queues for both parents and school staff to resolve any technical queries within 24 hours.",
+      img: usHero
     }
   ];
 
@@ -343,13 +339,13 @@ function App() {
         >
           {isSidebarOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
-        <div className="logo-main" style={{ fontSize: '1.2rem', letterSpacing: '0.15em' }}>ITECH</div>
+        <div className="logo-main" style={{ fontSize: '1.2rem', letterSpacing: '0.15em' }}>UNIQUE</div>
         <button 
           className="btn-premium" 
           style={{ padding: '8px 16px', fontSize: '0.65rem', letterSpacing: '0.2em' }}
           onClick={() => setIsResModalOpen(true)}
         >
-          AUDIT
+          DEMO
         </button>
       </header>
 
@@ -359,8 +355,8 @@ function App() {
            ========================================================================== */}
         <aside className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
           <div className="sidebar-logo">
-            <div className="logo-main">ITECH</div>
-            <div className="logo-sub">ROBOTICS</div>
+            <div className="logo-main">UNIQUE</div>
+            <div className="logo-sub">SCHOOLS</div>
           </div>
 
           <nav className="sidebar-nav">
@@ -368,37 +364,37 @@ function App() {
               className={`nav-item ${activeSection === 'home' ? 'active' : ''}`}
               onClick={() => scrollToSection('home')}
             >
-              The Partner
+              Our Mission
             </a>
             <a 
               className={`nav-item ${activeSection === 'story' ? 'active' : ''}`}
               onClick={() => scrollToSection('story')}
             >
-              Our Philosophy
+              Our Approach
             </a>
             <a 
               className={`nav-item ${activeSection === 'menu' ? 'active' : ''}`}
               onClick={() => scrollToSection('menu')}
             >
-              Capabilities
+              Product Suite
             </a>
             <a 
               className={`nav-item ${activeSection === 'hours' ? 'active' : ''}`}
               onClick={() => scrollToSection('hours')}
             >
-              Factory Metrics
+              Key Metrics
             </a>
             <a 
               className={`nav-item ${activeSection === 'gallery' ? 'active' : ''}`}
               onClick={() => scrollToSection('gallery')}
             >
-              Industry Gallery
+              Solutions Gallery
             </a>
             <a 
               className={`nav-item ${activeSection === 'associations' ? 'active' : ''}`}
               onClick={() => scrollToSection('associations')}
             >
-              Associations
+              Our Schools
             </a>
             <a 
               className={`nav-item ${activeSection === 'careers' ? 'active' : ''}`}
@@ -410,29 +406,29 @@ function App() {
               className={`nav-item ${activeSection === 'reserve' ? 'active' : ''}`}
               onClick={() => scrollToSection('reserve')}
             >
-              Inquiries
+              Get In Touch
             </a>
           </nav>
 
           <div className="sidebar-footer">
-            <a href="tel:+917722065205" className="sidebar-footer-link">
+            <a href="tel:018869458" className="sidebar-footer-link">
               <Phone size={13} className="text-gold" />
-              <span>+91 7722065205</span>
+              <span>01 886 9458</span>
             </a>
-            <a href="mailto:sales@irobotics.co.in" className="sidebar-footer-link">
+            <a href="mailto:james@uniqueschools.ie" className="sidebar-footer-link">
               <Mail size={13} className="text-gold" />
-              <span>sales@irobotics.co.in</span>
+              <span>james@uniqueschools.ie</span>
             </a>
             <div style={{ display: 'flex', gap: '15px', marginTop: '10px' }}>
-              <a href="https://www.linkedin.com/company/itech-robotics-&-automation-pvt.ltd" target="_blank" rel="noreferrer" className="sidebar-footer-link" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/unique-schools" target="_blank" rel="noreferrer" className="sidebar-footer-link" aria-label="LinkedIn">
                 <LinkedIn size={16} />
               </a>
-              <a href="https://www.youtube.com/@iTech_Robotics_And_Automation" target="_blank" rel="noreferrer" className="sidebar-footer-link" aria-label="YouTube">
-                <Youtube size={16} />
+              <a href="https://uniqueschools.ie" target="_blank" rel="noreferrer" className="sidebar-footer-link" aria-label="Website">
+                <Sparkles size={16} />
               </a>
             </div>
             <p style={{ fontSize: '0.6rem', marginTop: '15px' }}>
-              © 2026 ITECH ROBOTICS & AUTOMATION. ALL RIGHTS RESERVED.
+              © 2025 UNIQUE SCHOOLS. ALL RIGHTS RESERVED.
             </p>
           </div>
         </aside>
@@ -475,7 +471,7 @@ function App() {
                     <h1 className="carousel-title">{slide.title}</h1>
                     <p className="carousel-desc">{slide.desc}</p>
                     <button className="btn-premium" onClick={() => scrollToSection('reserve')}>
-                      EXPLORE CONSULTATION
+                      EXPLORE SOLUTIONS
                     </button>
                   </div>
                 </div>
@@ -507,22 +503,22 @@ function App() {
             <div className="origin-glow"></div>
             <div className="origin-grid">
               <div className="origin-text-block">
-                <span className="section-label">OUR PHILOSOPHY</span>
-                <h2 className="origin-title">Precision Over Complexity</h2>
+                <span className="section-label">OUR APPROACH</span>
+                <h2 className="origin-title">Human Connections Over Complexity</h2>
                 <div className="origin-paragraphs">
                   <p className="narrative-italic" style={{ fontSize: '1.5rem', color: 'var(--text-primary)' }}>
-                    "Inconsistency is the enemy of productivity."
+                    "Complexity is the enemy of connection."
                   </p>
                   <p>
-                    When our engineering team audited traditional manufacturing setups, recurring bottlenecks in welding, assembly, and parts handling were discovered. Under heavy production loads, throughput lagged while mechanical fixtures wore down. Operational costs grew while structural efficiency collapsed.
+                    When we analyzed school communications, we found that traditional channels—paper permission slips, physical diaries, manual checks, and separate payment systems—were breaking down. School staff spent hours chasing paperwork, while parents struggled to find critical updates in fragmented platforms.
                   </p>
                   <p>
-                    We decided that factory automation must be engineered differently. Real scaling productivity requires robust robotic systems, high-precision custom jigs, and smart vision inspection layers that adapt to dynamic workflows.
+                    We believed that school administration must be built differently. Bringing parents, teachers, and student services closer together requires custom-branded mobile apps, automated digital forms, and centralized hubs that fit right in your pocket.
                   </p>
                 </div>
                 <div className="origin-quote">
                   <p className="narrative-italic">
-                    "We do not build passive fixtures. We design automated robotic lines modeled after self-healing systems that scale output seamlessly under maximum load."
+                    "We do not build generic software. We design tailored school portals modeled after positive human interactions that simplify administration under any load."
                   </p>
                 </div>
               </div>
@@ -554,12 +550,12 @@ function App() {
           {/* CONTAINER 3: Core Service Slider */}
           <section id="menu" className="section-premium container-cocktails">
             {/* Watermark Logo behind slider */}
-            <div className="watermark-emblem">ITECH</div>
+            <div className="watermark-emblem">UNIQUE</div>
             
             <div className="cocktail-header">
               <div style={{ textAlign: 'left' }}>
-                <span className="section-label">ENGINEERING STACK</span>
-                <h2>Our Capabilities</h2>
+                <span className="section-label">INTEGRATED ECOSYSTEM</span>
+                <h2>Our Product Suite</h2>
               </div>
               <div className="cocktail-nav-arrows">
                 <button 
@@ -615,42 +611,42 @@ function App() {
             <div className="collage-grid">
               {/* Asymmetric collage: Item 1 (Image) */}
               <div className="collage-item collage-large-img">
-                <img src={irAbout} alt="iTech Robotics automation facility, Pune" />
+                <img src={usAbout} alt="Unique Schools support and community, Ireland" />
               </div>
 
               {/* Asymmetric collage: Item 2 (Opening Hours -> Support SLAs) */}
               <div className="collage-item collage-hours">
                 <span className="section-label">OPERATIONS & SUPPORT</span>
-                <h3 className="collage-title">Factory Metrics</h3>
+                <h3 className="collage-title">Key Metrics</h3>
                 <ul className="collage-list">
                   <li>
                     <span className="day-label">HEADQUARTERS</span>
-                    <span className="time-label">PUNE, INDIA</span>
+                    <span className="time-label">DUBLIN, IRELAND</span>
                   </li>
                   <li>
-                    <span className="day-label">SERVICE COVERAGE</span>
-                    <span className="time-label">NORTH, WEST, SOUTH</span>
+                    <span className="day-label">ADOPTION RATE</span>
+                    <span className="time-label">140+ IRISH SCHOOLS</span>
                   </li>
                   <li>
-                    <span className="day-label">EMERGENCY SUPPORT</span>
-                    <span className="time-label">&lt; 24 HOURS</span>
+                    <span className="day-label">SUPPORT SLA</span>
+                    <span className="time-label">&lt; 24 HOURS RESPONSE</span>
                   </li>
                   <li>
-                    <span className="day-label">SYSTEM UPTIME</span>
-                    <span className="time-label" style={{ color: 'var(--accent-copper)' }}>99.98% RELIABILITY</span>
+                    <span className="day-label">MONTHLY ACTIVITY</span>
+                    <span className="time-label" style={{ color: 'var(--accent-copper)' }}>1.4M+ CONNECTIONS</span>
                   </li>
                 </ul>
               </div>
 
               {/* Asymmetric collage: Item 3 (Acoustics -> System Philosophy) */}
               <div className="collage-item collage-music">
-                <span className="section-label">AUTOMATION BLUEPRINT</span>
-                <h3 className="collage-title">The Blueprint</h3>
+                <span className="section-label">SYSTEM BLUEPRINT</span>
+                <h3 className="collage-title">The Connected School</h3>
                 <p className="collage-quote">
-                  "Heavy-duty, precision-engineered automation built to withstand continuous production demands."
+                  "Centralizing administrative tasks so educators can focus on teaching."
                 </p>
                 <p style={{ fontSize: '0.85rem', lineHeight: '1.7', color: 'var(--text-secondary)' }}>
-                  Our robotic systems are modeled after high-speed, synchronized automotive lines. By integrating high-grade Siemens/Allen-Bradley PLCs, premium servo actuators, and precision machined components, we protect your factory floor from costly downtime and mechanical failures.
+                  Our school digital ecosystem is built for high security, ease-of-use, and instant sync. By replacing paper circulars with push-notified mobile forms, secure payment checkouts, and real-time attendance trackers, we reduce school office workloads by up to 75% and eliminate print budgets entirely.
                 </p>
               </div>
             </div>
@@ -658,145 +654,147 @@ function App() {
 
           {/* NEW CONTAINER: Strategic Industry Gallery */}
           <section id="gallery" className="section-premium container-gallery" style={{ borderTop: '1px solid var(--border-dim)', padding: '80px 0' }}>
-            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '10px' }}>INDUSTRIAL SHOWCASE</span>
-            <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '40px', letterSpacing: '0.15em' }}>IN ACTION GALLERY</h2>
+            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '10px' }}>SOLUTION SHOWCASE</span>
+            <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '40px', letterSpacing: '0.15em' }}>SOLUTIONS IN ACTION</h2>
 
             {/* Premium Tab Selector */}
             <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginBottom: '50px', flexWrap: 'wrap' }}>
               <button 
-                className={galleryCategory === 'automotive' ? 'btn-premium' : 'btn-premium-alt'} 
+                className={galleryCategory === 'parents' ? 'btn-premium' : 'btn-premium-alt'} 
                 style={{ fontSize: '0.75rem', padding: '10px 25px' }}
-                onClick={() => setGalleryCategory('automotive')}
+                onClick={() => setGalleryCategory('parents')}
               >
-                AUTOMOTIVE WELDING
+                PARENT HUB
               </button>
               <button 
-                className={galleryCategory === 'heavy' ? 'btn-premium' : 'btn-premium-alt'} 
+                className={galleryCategory === 'staff' ? 'btn-premium' : 'btn-premium-alt'} 
                 style={{ fontSize: '0.75rem', padding: '10px 25px' }}
-                onClick={() => setGalleryCategory('heavy')}
+                onClick={() => setGalleryCategory('staff')}
               >
-                HEAVY & SPECIALIZED
+                SCHOOL STAFF
               </button>
               <button 
-                className={galleryCategory === 'ev' ? 'btn-premium' : 'btn-premium-alt'} 
+                className={galleryCategory === 'students' ? 'btn-premium' : 'btn-premium-alt'} 
                 style={{ fontSize: '0.75rem', padding: '10px 25px' }}
-                onClick={() => setGalleryCategory('ev')}
+                onClick={() => setGalleryCategory('students')}
               >
-                ENERGY & EV SYSTEMS
+                STUDENT WELLBEING
               </button>
             </div>
 
             {/* Gallery Cards Grid */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', padding: '0 20px' }}>
-              {galleryCategory === 'automotive' && (
+              {galleryCategory === 'parents' && (
                 <>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irArcWeld} className="cocktail-card-img" alt="Two Wheeler Frame welding" />
-                      <div className="cocktail-card-price">Two Wheeler</div>
+                      <img src={usApp} className="cocktail-card-img" alt="Digital Permission Slips" />
+                      <div className="cocktail-card-price">us app</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Frame Welding Line</h3>
-                      <p className="cocktail-desc">Fully automated robotic two-wheeler frame welding cell with customized multi-axis positioning fixtures.</p>
-                      <p className="cocktail-ingredients">Robots, Multi-axis fixture, Safety locks</p>
+                      <h3 className="cocktail-name">Digital Permission Slips</h3>
+                      <p className="cocktail-desc">Parents sign consent forms and fill out absentee notes in 3 taps, saving school administration time and paper trails.</p>
+                      <p className="cocktail-ingredients">Push notifications, Mobile sign-off, Secure history</p>
                     </div>
                   </div>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irSpotWeld} className="cocktail-card-img" alt="Silencer Welding cell" />
-                      <div className="cocktail-card-price">Two Wheeler</div>
+                      <img src={usHero} className="cocktail-card-img" alt="Unified Payments" />
+                      <div className="cocktail-card-price">us app</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Silencer Welding Automation</h3>
-                      <p className="cocktail-desc">High-precision seam tracking system with automatic torch cleaner, delivering high-cosmetic weld beads.</p>
-                      <p className="cocktail-ingredients">Seam tracker, Torch cleaner, Dual positioner</p>
+                      <h3 className="cocktail-name">Unified Payments</h3>
+                      <p className="cocktail-desc">Pay school fees, book lists, and school trips securely in-app using credit cards, debit cards, or digital wallets.</p>
+                      <p className="cocktail-ingredients">Secure checkout, Installments, Receipt tracking</p>
                     </div>
                   </div>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irPressLine} className="cocktail-card-img" alt="Four Wheeler subframe welding" />
-                      <div className="cocktail-card-price">Four Wheeler</div>
+                      <img src={usAbout} className="cocktail-card-img" alt="Real-time School Feed" />
+                      <div className="cocktail-card-price">us app</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Sub-Frame Welding</h3>
-                      <p className="cocktail-desc">Automobile cradle and sub-frame automated multi-spot robotic cell optimized for minimized heat distortion.</p>
-                      <p className="cocktail-ingredients">Heavy spot guns, Servo positioner, 3W Cradle</p>
+                      <h3 className="cocktail-name">Real-time School Feed</h3>
+                      <p className="cocktail-desc">Receive immediate push announcements, event reminders, newsletters, and calendar updates directly on home screens.</p>
+                      <p className="cocktail-ingredients">Instant alerts, Class calendars, Custom feed</p>
                     </div>
                   </div>
                 </>
               )}
 
-              {galleryCategory === 'heavy' && (
+              {galleryCategory === 'staff' && (
                 <>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irSpm} className="cocktail-card-img" alt="Tractor Axle welding" />
-                      <div className="cocktail-card-price">Agriculture</div>
+                      <img src={usMonitor} className="cocktail-card-img" alt="Detention Management" />
+                      <div className="cocktail-card-price">us monitor</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Tractor Front Axle Cell</h3>
-                      <p className="cocktail-desc">Advanced SPM welding cell integrating 2 high-payload robots for simultaneous structural tractor axle welds.</p>
-                      <p className="cocktail-ingredients">2 Welding Robots, Heavy fixture, 1-min cycle</p>
+                      <h3 className="cocktail-name">Detention Management</h3>
+                      <p className="cocktail-desc">Log detentions digitally, automatically notify parents, and track student completion inside one centralized portal.</p>
+                      <p className="cocktail-ingredients">Auto-alert emails, Status logs, Staff dashboard</p>
                     </div>
                   </div>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irHandling} className="cocktail-card-img" alt="Wagon wheel gantry" />
-                      <div className="cocktail-card-price">Railway</div>
+                      <img src={usSites} className="cocktail-card-img" alt="School Site CMS" />
+                      <div className="cocktail-card-price">us sites</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Gigantic Gantry System</h3>
-                      <p className="cocktail-desc">In-house designed overhead heavy gantry engineered to handle massive 1.4-ton railway wagon wheels.</p>
-                      <p className="cocktail-ingredients">1.4-ton capacity, Heavy structure, PLC safety</p>
+                      <h3 className="cocktail-name">School Site CMS</h3>
+                      <p className="cocktail-desc">Edit enrollment forms, policies, notices, and calendar entries. Changes sync immediately to the public school website.</p>
+                      <p className="cocktail-ingredients">Web hosting, Instant sync, Custom domains</p>
                     </div>
                   </div>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irManip} className="cocktail-card-img" alt="Chemical Barrel Handling" />
-                      <div className="cocktail-card-price">Chemical</div>
+                      <img src={usMonitor} className="cocktail-card-img" alt="Form Analytics" />
+                      <div className="cocktail-card-price">us monitor</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Hazardous Barrel Handler</h3>
-                      <p className="cocktail-desc">Robust manipulator system engineered to handle 1.2-ton chemical barrels safely in critical explosive environments.</p>
-                      <p className="cocktail-ingredients">1.2-ton lift, Pneumatic balancer, Spark proof</p>
+                      <h3 className="cocktail-name">Form Analytics & Reports</h3>
+                      <p className="cocktail-desc">Track permission slip responses in real-time. Export class lists showing signed and unsigned responses instantly.</p>
+                      <p className="cocktail-ingredients">CSV export, Response charts, Teacher folders</p>
                     </div>
                   </div>
                 </>
               )}
 
-              {galleryCategory === 'ev' && (
+              {galleryCategory === 'students' && (
                 <>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irBattery} className="cocktail-card-img" alt="Cylindrical Battery Module" />
-                      <div className="cocktail-card-price">EV Packs</div>
+                      <img src={usDiary} className="cocktail-card-img" alt="Resilience Student Diary" />
+                      <div className="cocktail-card-price">us diary</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Cylindrical Assembly Line</h3>
-                      <p className="cocktail-desc">High-speed modular EV cell battery welding and module routing system operating at speeds of over 40 PPM.</p>
-                      <p className="cocktail-ingredients">40 PPM system, Laser Weld grid, Busbar routing</p>
+                      <h3 className="cocktail-name">Resilience Student Diary</h3>
+                      <p className="cocktail-desc">Custom school diaries integrated with weekly planners, homework sheets, and structured student resilience exercises.</p>
+                      <p className="collage-quote" style={{ fontSize: '0.8rem', fontStyle: 'normal', margin: 0, padding: '10px 0 0 0', borderTop: '1px solid var(--border-dim)' }}>
+                        Printed diary, Planner layout, Wellbeing prompts
+                      </p>
                     </div>
                   </div>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irHero} className="cocktail-card-img" alt="Prismatic Pack Assembly" />
-                      <div className="cocktail-card-price">EV Battery</div>
+                      <img src={usAbout} className="cocktail-card-img" alt="Be A Hero Programme" />
+                      <div className="cocktail-card-price">programme</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Prismatic Module Line</h3>
-                      <p className="cocktail-desc">High-flexibility prismatic EV battery cells sorting, compound placing, and packing cell, operating at 12 PPM.</p>
-                      <p className="cocktail-ingredients">12 PPM, 99.9% pass rate, Semi-automated</p>
+                      <h3 className="cocktail-name">Be A Hero Programme</h3>
+                      <p className="cocktail-desc">An 8-month resilience curriculum that empowers students through digital content, wristbands, and wellbeing lessons.</p>
+                      <p className="cocktail-ingredients">Hero wristband, Monthly email prompts, School lessons</p>
                     </div>
                   </div>
                   <div className="cocktail-card">
                     <div className="cocktail-img-wrap">
-                      <img src={irVision} className="cocktail-card-img" alt="Lead Acid battery inspection" />
-                      <div className="cocktail-card-price">Quality Check</div>
+                      <img src={usHero} className="cocktail-card-img" alt="Monthly Spot Prizes" />
+                      <div className="cocktail-card-price">engagement</div>
                     </div>
                     <div className="cocktail-info">
-                      <h3 className="cocktail-name">Battery Testing Grid</h3>
-                      <p className="cocktail-desc">End-of-line lead-acid battery vision-guided dimension test, leakage check, and dynamic HRD load diagnostics.</p>
-                      <p className="cocktail-ingredients">Vision sensor, Helium leak test, HRD logs</p>
+                      <h3 className="cocktail-name">Monthly Spot Prizes</h3>
+                      <p className="cocktail-desc">Encourage student wellbeing and participation in resilience challenges with monthly spot prizes delivered to schools.</p>
+                      <p className="cocktail-ingredients">Student incentives, School deliveries, Monthly draws</p>
                     </div>
                   </div>
                 </>
@@ -806,10 +804,10 @@ function App() {
 
           {/* NEW CONTAINER: Associations / Partners Section */}
           <section id="associations" className="section-premium container-associations" style={{ borderTop: '1px solid var(--border-dim)', padding: '80px 20px', background: 'rgba(6,182,212,0.02)', overflow: 'hidden' }}>
-            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '10px' }}>GLOBAL TRUST</span>
-            <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '20px', letterSpacing: '0.15em' }}>CLIENT ASSOCIATIONS</h2>
+            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '10px' }}>LOCAL TRUST</span>
+            <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '20px', letterSpacing: '0.15em' }}>SCHOOL ASSOCIATIONS</h2>
             <p style={{ textAlign: 'center', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 50px auto', fontSize: '0.9rem', lineHeight: '1.6' }}>
-              Our engineering footprint spans globally, servicing and collaborating with premier industrial partners across Europe, Central Russia, India, Sri Lanka, and East Asia.
+              Our digital platforms support school systems and parent communication networks across all counties in Ireland, serving over 140 educational institutions.
             </p>
 
             {/* Responsive Dotted World Map Wrap */}
@@ -817,68 +815,68 @@ function App() {
               <div className="map-view-wrapper" style={{ minWidth: '850px' }}>
                 <img src={irWorldMap} className="map-svg-bg" alt="Dotted World Map footprint" />
 
-                {/* Hotspot & Logo 1: Eurobots (Spain/Europe West) */}
+                {/* Hotspot & Logo 1: Eurobots (Spain/Europe West) -> DUBLIN */}
                 <div className="map-hotspot" style={{ left: '46.8%', top: '39.8%' }}></div>
                 <div className="association-pointer-card" style={{ left: '42.8%', top: '34.5%' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                    <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: 'linear-gradient(to right, #4caf50, #f44336)' }}></span>
+                    <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', background: 'linear-gradient(to right, #2563eb, #0891b2)' }}></span>
                     <div>
-                      <div style={{ color: '#000', fontSize: '0.7rem', fontWeight: '900', lineHeight: 1 }}>EUROBOTS</div>
-                      <div style={{ color: '#64748b', fontSize: '0.45rem', letterSpacing: '0.05em' }}>industrial robots</div>
+                      <div style={{ color: '#000', fontSize: '0.7rem', fontWeight: '900', lineHeight: 1 }}>DUBLIN</div>
+                      <div style={{ color: '#64748b', fontSize: '0.45rem', letterSpacing: '0.05em' }}>34 schools active</div>
                     </div>
                   </div>
                 </div>
                 <div className="pointer-line" style={{ left: '46.8%', top: '34.5%', height: '22px', transform: 'rotate(50deg)' }}></div>
 
-                {/* Hotspot & Logo 2: Techvagonmash (Russia) */}
+                {/* Hotspot & Logo 2: Techvagonmash (Russia) -> GALWAY */}
                 <div className="map-hotspot" style={{ left: '56.4%', top: '23.8%' }}></div>
                 <div className="association-pointer-card" style={{ left: '56.4%', top: '15.5%' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                    <span style={{ color: '#64748b', fontSize: '0.45rem', fontWeight: 'bold', letterSpacing: '0.05em', marginBottom: '2px' }}>RESEARCH AND PRODUCTION ENTERPRISE</span>
+                    <span style={{ color: '#64748b', fontSize: '0.45rem', fontWeight: 'bold', letterSpacing: '0.05em', marginBottom: '2px' }}>CONNACHT REGION</span>
                     <div style={{ background: '#0f172a', color: '#fff', padding: '3px 8px', borderRadius: '2px', fontSize: '0.6rem', fontWeight: 'bold', letterSpacing: '0.05em' }}>
-                      TECHVAGONMASH
+                      GALWAY (18 Schools)
                     </div>
                   </div>
                 </div>
                 <div className="pointer-line" style={{ left: '56.4%', top: '15.5%', height: '34px' }}></div>
 
-                {/* Hotspot & Logo 3: iRobotics (India) */}
+                {/* Hotspot & Logo 3: iRobotics (India) -> Cork */}
                 <div className="map-hotspot" style={{ left: '70.2%', top: '53.4%' }}></div>
                 <div className="association-pointer-card" style={{ left: '62.5%', top: '48.5%' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <span style={{ color: '#f59e0b', fontSize: '1rem', fontWeight: '900', fontStyle: 'italic' }}>i</span>
-                    <span style={{ color: '#ef4444', fontSize: '0.85rem', fontWeight: '900', letterSpacing: '0.02em' }}>Robotics</span>
+                    <span style={{ color: '#2563eb', fontSize: '1rem', fontWeight: '900', fontStyle: 'italic' }}>C</span>
+                    <span style={{ color: '#0891b2', fontSize: '0.85rem', fontWeight: '900', letterSpacing: '0.02em' }}>ORK (26 active)</span>
                   </div>
                 </div>
                 <div className="pointer-line" style={{ left: '68.0%', top: '48.5%', height: '26px', transform: 'rotate(120deg)' }}></div>
 
-                {/* Hotspot & Logo 4: Lalan Engineering (Sri Lanka) */}
+                {/* Hotspot & Logo 4: Lalan Engineering (Sri Lanka) -> LIMERICK */}
                 <div className="map-hotspot" style={{ left: '70.2%', top: '61.5%' }}></div>
                 <div className="association-pointer-card" style={{ left: '76.8%', top: '63.2%' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                    <span style={{ fontSize: '0.9rem', color: '#0284c7' }}>🌀</span>
+                    <span style={{ fontSize: '0.9rem', color: '#2563eb' }}>🌀</span>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      <span style={{ color: '#0369a1', fontWeight: '900', fontSize: '0.65rem', lineHeight: 1 }}>LALAN</span>
-                      <span style={{ color: '#64748b', fontSize: '0.45rem', lineHeight: 1 }}>Engineering (Pvt) Ltd</span>
+                      <span style={{ color: '#0891b2', fontWeight: '900', fontSize: '0.65rem', lineHeight: 1 }}>LIMERICK</span>
+                      <span style={{ color: '#64748b', fontSize: '0.45rem', lineHeight: 1 }}>12 schools active</span>
                     </div>
                   </div>
                 </div>
                 <div className="pointer-line" style={{ left: '71.5%', top: '61.5%', height: '22px', transform: 'rotate(80deg)' }}></div>
 
-                {/* Hotspot & Logo 5: M-Tech (China) */}
+                {/* Hotspot & Logo 5: M-Tech (China) -> KILDARE */}
                 <div className="map-hotspot" style={{ left: '78.5%', top: '44.8%' }}></div>
                 <div className="association-pointer-card" style={{ left: '76.2%', top: '38.5%' }}>
-                  <div style={{ color: '#ea580c', borderTop: '2px solid #ea580c', borderBottom: '2px solid #ea580c', padding: '1px 6px', fontWeight: '900', letterSpacing: '0.05em', fontSize: '0.7rem' }}>
-                    M-TECH
+                  <div style={{ color: '#2563eb', borderTop: '2px solid #2563eb', borderBottom: '2px solid #0891b2', padding: '1px 6px', fontWeight: '900', letterSpacing: '0.05em', fontSize: '0.7rem' }}>
+                    KILDARE (15)
                   </div>
                 </div>
                 <div className="pointer-line" style={{ left: '78.5%', top: '38.5%', height: '26px', transform: 'rotate(30deg)' }}></div>
 
-                {/* Hotspot & Logo 6: Aotto (East Asia) */}
+                {/* Hotspot & Logo 6: Aotto (East Asia) -> WICKLOW */}
                 <div className="map-hotspot" style={{ left: '83.2%', top: '46.8%' }}></div>
                 <div className="association-pointer-card" style={{ left: '86.5%', top: '44.2%' }}>
-                  <div style={{ color: '#dc2626', fontWeight: '900', fontSize: '0.85rem', letterSpacing: '-0.02em' }}>
-                    Aotto
+                  <div style={{ color: '#2563eb', fontWeight: '900', fontSize: '0.85rem', letterSpacing: '-0.02em' }}>
+                    WICKLOW (11)
                   </div>
                 </div>
                 <div className="pointer-line" style={{ left: '84.2%', top: '44.2%', height: '18px', transform: 'rotate(-45deg)' }}></div>
@@ -889,10 +887,10 @@ function App() {
 
           {/* NEW CONTAINER: Careers / Open Positions Section */}
           <section id="careers" className="section-premium container-careers" style={{ borderTop: '1px solid var(--border-dim)', padding: '80px 20px' }}>
-            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '10px' }}>BUILD WITH US</span>
-            <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '20px', letterSpacing: '0.15em' }}>CAREER OPPORTUNITIES</h2>
+            <span className="section-label" style={{ display: 'block', textAlign: 'center', marginBottom: '10px' }}>JOIN OUR TEAM</span>
+            <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '20px', letterSpacing: '0.15em' }}>CAREER OPENINGS</h2>
             <p style={{ textAlign: 'center', color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 50px auto', fontSize: '0.9rem', lineHeight: '1.6' }}>
-              Join our elite engineering division. We are always looking for visionary roboticists, precise mechanical fixture designers, and meticulous PLC programmers to drive world-class industrial automation.
+              Join our dedicated team. We are always looking for passionate full-stack engineers, customer onboarding specialists, and school support leads to build and scale next-generation school platforms.
             </p>
 
             {/* Accordion Job List */}
@@ -900,31 +898,31 @@ function App() {
               {[
                 {
                   id: 0,
-                  title: 'EV Proposal Engineer',
-                  exp: '3 Years Experience',
-                  qual: 'Mechatronics / Mechanical Engineering, SolidWorks & AutoCAD proficiency',
-                  role: 'Checking customer RFQs for technical feasibility, creating concept pricing grids, assisting sales leads in EV battery pack module assembly lines.'
+                  title: 'Senior Full-Stack Engineer',
+                  exp: '3+ Years Experience',
+                  qual: 'React, Node.js, AWS, PostgreSQL, Mobile App deployment experience',
+                  role: 'Designing and developing features for our core us app and admin dashboards, optimizing DB queries, and scaling backend APIs.'
                 },
                 {
                   id: 1,
-                  title: 'PLC Programmer',
-                  exp: '3 to 5 Years Experience',
-                  qual: 'BE / B.Tech or Diploma in Electronics & Controls',
-                  role: 'Developing full logic programs in Siemens, Allen-Bradley, Mitsubishi, or Delta. Robot controller programming for Fanuc, ABB, Yaskawa, and KUKA.'
+                  title: 'School Onboarding Specialist',
+                  exp: '2+ Years Experience',
+                  qual: 'Customer Success, School Operations, or Training experience',
+                  role: 'Guiding school staff through onboarding, setting up school site directories, and conducting training webcasts for school admins.'
                 },
                 {
                   id: 2,
-                  title: 'Design Engineer',
-                  exp: '1 to 4 Years Experience',
-                  qual: 'Bachelor in Mechatronics or relevant field',
-                  role: 'Preparing 3D concept designs of MIG/Spot welding fixtures and Special Purpose Machines (SPMs). Performing pneumatic & hydraulic circuit drawings & DAP presentations.'
+                  title: 'UI/UX Product Designer',
+                  exp: '2+ Years Experience',
+                  qual: 'Figma, Design Systems, Mobile/Web interaction design portfolio',
+                  role: 'Designing beautiful, intuitive interfaces for the mobile parent portal and school dashboards, prioritizing simplicity and accessibility.'
                 },
                 {
                   id: 3,
-                  title: 'DET / GET (Electrical & Mechatronics)',
-                  exp: '0 to 1 Year Experience',
-                  qual: 'Diploma or BE in Electrical or Mechatronics Engineering',
-                  role: 'Robot and system maintenance on customer floors, field electrical wiring, and assisting commissioning engineers in onsite project installation.'
+                  title: 'Mobile Support Specialist',
+                  exp: '1+ Years Experience',
+                  qual: 'Customer Support (Zendesk/Intercom), basic technical troubleshooting',
+                  role: 'Responding to parent and school staff support tickets, diagnosing mobile app issues, and coordinating bug reports with engineering.'
                 }
               ].map((job) => (
                 <div 
@@ -951,7 +949,7 @@ function App() {
                     }}
                   >
                     <div>
-                      <h3 style={{ fontSize: '1.05rem', color: '#fff', margin: 0 }}>{job.title}</h3>
+                      <h3 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', margin: 0 }}>{job.title}</h3>
                       <span style={{ fontSize: '0.75rem', color: 'var(--accent-copper)' }}>{job.exp}</span>
                     </div>
                     <span style={{ fontSize: '1.5rem', color: 'var(--text-secondary)' }}>
@@ -961,7 +959,7 @@ function App() {
 
                   {/* Accordion Body */}
                   {activeCareerAccordion === job.id && (
-                    <div style={{ padding: '25px', borderTop: '1px solid var(--border-dim)', background: 'rgba(0,0,0,0.2)' }}>
+                    <div style={{ padding: '25px', borderTop: '1px solid var(--border-dim)', background: 'rgba(0,0,0,0.02)' }}>
                       <div style={{ marginBottom: '15px' }}>
                         <strong style={{ fontSize: '0.8rem', color: 'var(--text-primary)', display: 'block', marginBottom: '5px' }}>KEY QUALIFICATION:</strong>
                         <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', margin: 0 }}>{job.qual}</p>
@@ -994,17 +992,17 @@ function App() {
           {/* CONTAINER 5: Cinematic Reservation Area & Dual Buttons */}
           <section id="reserve" className="section-premium container-reservations">
             <div className="reservations-box">
-              <span className="section-label">AUTOMATION ENGAGEMENT</span>
-              <h2 className="res-title">Optimize Your Production Line</h2>
+              <span className="section-label">DIGITAL ENGAGEMENT</span>
+              <h2 className="res-title">Simplify School Communications</h2>
               <p className="res-desc">
-                Factory automation audits are highly recommended to review manufacturing setups, identify cycle bottlenecks, and map out high-precision robotic solutions tailored precisely to your output targets.
+                Book a custom live demo to review your current school channels, identify administrative bottlenecks, and see how our tailored apps can simplify parent communications and office workloads.
               </p>
               <div className="res-buttons">
                 <button className="btn-premium" onClick={() => setIsResModalOpen(true)}>
-                  BOOK AUTOMATION AUDIT
+                  SCHEDULE LIVE DEMO
                 </button>
                 <button className="btn-premium-alt" onClick={() => setIsHireModalOpen(true)}>
-                  REQUEST PARTNERSHIP RFP
+                  REQUEST SCHOOL PROPOSAL
                 </button>
               </div>
             </div>
@@ -1014,7 +1012,7 @@ function App() {
           <div className="aperture-header">
             <div className="aperture-bg"></div>
             <div className="aperture-overlay">
-              <span className="aperture-title">START THE INTEGRATION</span>
+              <span className="aperture-title">CONNECT YOUR SCHOOL</span>
             </div>
           </div>
 
@@ -1023,15 +1021,15 @@ function App() {
             <div className="footer-content">
               {/* Col 1: Brand */}
               <div className="footer-brand">
-                <h2 style={{ fontSize: '2rem', letterSpacing: '0.15em', fontWeight: 200, marginBottom: '20px' }}>ITECH</h2>
+                <h2 style={{ fontSize: '2rem', letterSpacing: '0.15em', fontWeight: 200, marginBottom: '20px' }}>UNIQUE</h2>
                 <p className="narrative-italic" style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '25px' }}>
-                  Your Automation Partner,<br />
-                  where precision matters.
+                  Your Digital School Partner,<br />
+                  where connection matters.
                 </p>
                 <p style={{ opacity: 0.7, fontSize: '0.8rem', lineHeight: '1.6' }}>
-                  Gat No. 444/2, Plot No. 49,<br />
-                  Success Property Venture, Nighojhe,<br />
-                  Tal.: Khed, Dist.: Pune – 410501
+                  First Floor, Block 3 Airvista Office Park,<br />
+                  Swords Road, Santry,<br />
+                  Dublin 9, D09 VK65
                 </p>
               </div>
 
@@ -1040,14 +1038,14 @@ function App() {
                 <div className="footer-nav-col">
                   <span className="footer-title">THE COMPANY</span>
                   <a onClick={() => scrollToSection('home')} className="footer-link-classic">Home</a>
-                  <a onClick={() => scrollToSection('story')} className="footer-link-classic">Philosophy</a>
-                  <a onClick={() => scrollToSection('menu')} className="footer-link-classic">Capabilities</a>
+                  <a onClick={() => scrollToSection('story')} className="footer-link-classic">Approach</a>
+                  <a onClick={() => scrollToSection('menu')} className="footer-link-classic">Product Suite</a>
                   <a onClick={() => scrollToSection('gallery')} className="footer-link-classic">Gallery</a>
                 </div>
                 <div className="footer-nav-col">
                   <span className="footer-title">ENGAGEMENT</span>
                   <a onClick={() => scrollToSection('hours')} className="footer-link-classic">Metrics</a>
-                  <a onClick={() => scrollToSection('associations')} className="footer-link-classic">Associations</a>
+                  <a onClick={() => scrollToSection('associations')} className="footer-link-classic">Our Schools</a>
                   <a onClick={() => scrollToSection('careers')} className="footer-link-classic">Careers</a>
                   <a onClick={() => scrollToSection('reserve')} className="footer-link-classic">Inquiries</a>
                 </div>
@@ -1056,15 +1054,15 @@ function App() {
               {/* Col 3: Sliding Social & Contacts */}
               <div className="footer-social-links">
                 <span className="footer-title">DIGITAL SPACES</span>
-                <a href="https://www.linkedin.com/company/itech-robotics-&-automation-pvt.ltd" target="_blank" rel="noreferrer" className="footer-social-btn">
+                <a href="https://www.linkedin.com/company/unique-schools" target="_blank" rel="noreferrer" className="footer-social-btn">
                   <span>LinkedIn</span>
                   <ArrowRight size={16} />
                 </a>
-                <a href="https://www.youtube.com/@iTech_Robotics_And_Automation" target="_blank" rel="noreferrer" className="footer-social-btn">
-                  <span>YouTube</span>
+                <a href="https://uniqueschools.ie" target="_blank" rel="noreferrer" className="footer-social-btn">
+                  <span>School Website</span>
                   <ArrowRight size={16} />
                 </a>
-                <a href="tel:+917722065205" className="footer-social-btn">
+                <a href="tel:018869458" className="footer-social-btn">
                   <span>Direct Call</span>
                   <Phone size={16} />
                 </a>
@@ -1072,7 +1070,7 @@ function App() {
             </div>
 
             <div className="footer-copyright">
-              Designed with premium aesthetics. Developed in React for iTech Robotics and Automation.
+              Designed with premium aesthetics. Developed in React for Unique Schools LLP.
             </div>
           </footer>
         </main>
@@ -1090,8 +1088,8 @@ function App() {
 
             {!resSubmitted ? (
               <>
-                <h3 className="modal-title">SECURE AUTOMATION AUDIT</h3>
-                <p className="modal-subtitle">Plant audit and consultation with a Lead Roboticist</p>
+                <h3 className="modal-title">SCHEDULE LIVE DEMO</h3>
+                <p className="modal-subtitle">Custom platform preview with a Product Consultant</p>
                 <form className="res-form" onSubmit={handleResSubmit}>
                   <div className="form-group form-full-width">
                     <label htmlFor="res-name">Full Name *</label>
@@ -1101,19 +1099,19 @@ function App() {
                       required 
                       value={resForm.name} 
                       onChange={(e) => setResForm({...resForm, name: e.target.value})} 
-                      placeholder="Alexander Vance"
+                      placeholder="James Higgins"
                     />
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="res-email">Business Email *</label>
+                    <label htmlFor="res-email">School/Staff Email *</label>
                     <input 
                       type="email" 
                       id="res-email"
                       required 
                       value={resForm.email} 
                       onChange={(e) => setResForm({...resForm, email: e.target.value})} 
-                      placeholder="alex@vance.com"
+                      placeholder="principal@school.ie"
                     />
                   </div>
 
@@ -1125,7 +1123,7 @@ function App() {
                       required 
                       value={resForm.phone} 
                       onChange={(e) => setResForm({...resForm, phone: e.target.value})} 
-                      placeholder="+91 7722065205"
+                      placeholder="01 886 9458"
                     />
                   </div>
 
@@ -1141,48 +1139,48 @@ function App() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="res-time">Primary Automation Interest *</label>
+                    <label htmlFor="res-time">Primary Product Interest *</label>
                     <select 
                       id="res-time"
                       value={resForm.time} 
                       onChange={(e) => setResForm({...resForm, time: e.target.value})}
                     >
-                      <option value="Robotic Welding">Robotic Arc/Spot Welding</option>
-                      <option value="Material Handling">Material Handling & Manipulators</option>
-                      <option value="Battery Assembly">EV Battery Pack Assembly</option>
-                      <option value="Special Purpose Machines">Special Purpose Machines (SPMs)</option>
-                      <option value="Vision & Inspection">Vision & Quality Inspection</option>
+                      <option value="us app">us app Mobile Parent Portal</option>
+                      <option value="us monitor">us monitor Administration Portal</option>
+                      <option value="us sites">us sites School Websites</option>
+                      <option value="us diary">us diary Student Wellbeing</option>
+                      <option value="Be A Hero">Be A Hero Resilience Programme</option>
                     </select>
                   </div>
 
                   <div className="form-group form-full-width">
-                    <label htmlFor="res-guests">Target Production Capacity *</label>
+                    <label htmlFor="res-guests">School Enrollment Size *</label>
                     <select 
                       id="res-guests"
                       value={resForm.guests} 
                       onChange={(e) => setResForm({...resForm, guests: e.target.value})}
                     >
-                      <option value="Low Volume">Low-volume batch production</option>
-                      <option value="Medium Volume">Medium-volume batch runs</option>
-                      <option value="High Volume">High-volume continuous production</option>
-                      <option value="Full Plant Overhaul">Entire plant automation overhaul</option>
+                      <option value="Under 200 Students">Under 200 Students</option>
+                      <option value="200-500 Students">200-500 Students</option>
+                      <option value="500-1000 Students">500-1000 Students</option>
+                      <option value="1000+ Students">1000+ Students</option>
                     </select>
                   </div>
 
                   <div className="form-group form-full-width">
-                    <label htmlFor="res-notes">Current Setup & Mechanical Bottlenecks</label>
+                    <label htmlFor="res-notes">Current Challenges & Requirements</label>
                     <textarea 
                       id="res-notes"
                       rows="3" 
                       value={resForm.notes} 
                       onChange={(e) => setResForm({...resForm, notes: e.target.value})}
-                      placeholder="Please let us know your current mechanical setup, welding challenges, or production targets..."
+                      placeholder="Please let us know your current school management systems, paper communications challenges, or school goals..."
                     />
                   </div>
 
                   <div className="submit-btn-wrap">
                     <button type="submit" className="btn-premium submit-btn">
-                      CONFIRM AUTOMATION AUDIT
+                      CONFIRM DEMO SCHEDULE
                     </button>
                   </div>
                 </form>
@@ -1192,12 +1190,12 @@ function App() {
                 <div className="success-icon-wrap">
                   <CheckCircle size={60} strokeWidth={1} style={{ margin: '0 auto' }} />
                 </div>
-                <h3 className="modal-title" style={{ color: 'var(--accent-copper)' }}>AUTOMATION AUDIT SECURED</h3>
-                <p className="modal-subtitle">iTech Robotics Engineering Team</p>
+                <h3 className="modal-title" style={{ color: 'var(--accent-copper)' }}>DEMO RESERVATION SECURED</h3>
+                <p className="modal-subtitle">Unique Schools Support Team</p>
                 <div style={{ border: '1px solid var(--border-gold)', padding: '25px', background: 'var(--bg-primary)', margin: '25px 0', textAlign: 'left' }}>
                   <div style={{ display: 'flex', gap: '15px', marginBottom: '15px' }}>
                     <Layers size={16} className="text-gold" />
-                    <span style={{ fontSize: '0.85rem' }}><strong>Production Scope:</strong> {resForm.guests}</span>
+                    <span style={{ fontSize: '0.85rem' }}><strong>School Size:</strong> {resForm.guests}</span>
                   </div>
                   <div style={{ display: 'flex', gap: '15px', marginBottom: '15px' }}>
                     <Calendar size={16} className="text-gold" />
@@ -1205,16 +1203,16 @@ function App() {
                   </div>
                   <div style={{ display: 'flex', gap: '15px', marginBottom: '15px' }}>
                     <Cpu size={16} className="text-gold" />
-                    <span style={{ fontSize: '0.85rem' }}><strong>Automation Focus:</strong> {resForm.time}</span>
+                    <span style={{ fontSize: '0.85rem' }}><strong>Product Focus:</strong> {resForm.time}</span>
                   </div>
                   <div style={{ display: 'flex', gap: '15px', borderTop: '1px solid var(--border-dim)', paddingTop: '15px' }}>
                     <Sparkles size={16} className="text-gold" />
-                    <span style={{ fontSize: '0.85rem' }}><strong>Audit Confirmation Code:</strong> <span style={{ letterSpacing: '0.1em', color: '#fff' }}><strong>#IR-{Math.floor(1000 + Math.random() * 9000)}</strong></span></span>
+                    <span style={{ fontSize: '0.85rem' }}><strong>Demo Confirmation Code:</strong> <span style={{ letterSpacing: '0.1em', color: '#fff' }}><strong>#US-{Math.floor(1000 + Math.random() * 9000)}</strong></span></span>
                   </div>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-                  A plant evaluation questionnaire and calendar invite have been sent to <strong>{resForm.email}</strong>. 
-                  Our lead robotics engineer will contact you on <strong>{resForm.phone}</strong> for confirmation.
+                  A platform demonstration agenda and calendar invite have been sent to <strong>{resForm.email}</strong>. 
+                  Our onboarding consultant will contact you on <strong>{resForm.phone}</strong> for final verification.
                 </p>
                 <button 
                   className="btn-premium" 
@@ -1222,7 +1220,7 @@ function App() {
                   onClick={() => {
                     setIsResModalOpen(false);
                     setResSubmitted(false);
-                    setResForm({ name: '', email: '', phone: '', date: '', time: 'Robotic Welding', guests: 'Medium Volume', notes: '' });
+                    setResForm({ name: '', email: '', phone: '', date: '', time: 'us app', guests: '200-500 Students', notes: '' });
                   }}
                 >
                   RETURN TO THE PLATFORM
@@ -1245,8 +1243,8 @@ function App() {
 
             {!hireSubmitted ? (
               <>
-                <h3 className="modal-title">REQUEST PARTNERSHIP RFP</h3>
-                <p className="modal-subtitle">Factory-level robotics & automation initiatives</p>
+                <h3 className="modal-title">REQUEST SCHOOL PROPOSAL</h3>
+                <p className="modal-subtitle">Custom products & resilience programmes consultation</p>
                 <form className="res-form" onSubmit={handleHireSubmit}>
                   <div className="form-group form-full-width">
                     <label htmlFor="hire-name">Full Name *</label>
@@ -1256,19 +1254,19 @@ function App() {
                       required 
                       value={hireForm.name} 
                       onChange={(e) => setHireForm({...hireForm, name: e.target.value})} 
-                      placeholder="Victoria Sterling"
+                      placeholder="Brendan Byrne"
                     />
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="hire-email">Business Email *</label>
+                    <label htmlFor="hire-email">School/Staff Email *</label>
                     <input 
                       type="email" 
                       id="hire-email"
                       required 
                       value={hireForm.email} 
                       onChange={(e) => setHireForm({...hireForm, email: e.target.value})} 
-                      placeholder="victoria@sterlingcorp.co.uk"
+                      placeholder="bbyrne@colaiste.ie"
                     />
                   </div>
 
@@ -1280,12 +1278,12 @@ function App() {
                       required 
                       value={hireForm.phone} 
                       onChange={(e) => setHireForm({...hireForm, phone: e.target.value})} 
-                      placeholder="+91 7722065205"
+                      placeholder="01 886 9458"
                     />
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="hire-date">Target Project Launch *</label>
+                    <label htmlFor="hire-date">Target Launch Date *</label>
                     <input 
                       type="date" 
                       id="hire-date"
@@ -1296,34 +1294,34 @@ function App() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="hire-guests">Estimated Budget Range *</label>
+                    <label htmlFor="hire-guests">School Enrollment *</label>
                     <select 
                       id="hire-guests"
                       value={hireForm.guests} 
                       onChange={(e) => setHireForm({...hireForm, guests: e.target.value})}
                     >
-                      <option value="₹5 Lakhs - ₹20 Lakhs">₹500,000 — ₹2,000,000 (Modular Component)</option>
-                      <option value="₹20 Lakhs - ₹1 Crore">₹2,000,000 — ₹10,000,000 (Core Integration)</option>
-                      <option value="₹1 Crore - ₹5 Crores">₹10,000,000 — ₹50,000,000 (Line Overhaul)</option>
-                      <option value="Enterprise Custom">₹50,000,000+ (Full Factory Automation)</option>
+                      <option value="Under 200 Students">Under 200 Students</option>
+                      <option value="200-500 Students">200-500 Students</option>
+                      <option value="500-1000 Students">500-1000 Students</option>
+                      <option value="1000+ Students">1000+ Students</option>
                     </select>
                   </div>
 
                   <div className="form-group form-full-width">
-                    <label htmlFor="hire-details">RFP Scope Overview *</label>
+                    <label htmlFor="hire-details">Proposal Scope & Requirements *</label>
                     <textarea 
                       id="hire-details"
                       rows="4" 
                       required
                       value={hireForm.details} 
                       onChange={(e) => setHireForm({...hireForm, details: e.target.value})}
-                      placeholder="Please share high-level project milestones, cycle time benchmarks, or automation objectives..."
+                      placeholder="Please let us know which products you're interested in, any specific school guidelines, or launch expectations..."
                     />
                   </div>
 
                   <div className="submit-btn-wrap">
                     <button type="submit" className="btn-premium submit-btn">
-                      SEND PARTNERSHIP RFP
+                      SEND PROPOSAL REQUEST
                     </button>
                   </div>
                 </form>
@@ -1333,8 +1331,8 @@ function App() {
                 <div className="success-icon-wrap" style={{ color: 'var(--accent-copper)' }}>
                   <MessageSquare size={60} strokeWidth={1} style={{ margin: '0 auto' }} />
                 </div>
-                <h3 className="modal-title" style={{ color: 'var(--accent-copper)' }}>RFP REGISTRY SECURED</h3>
-                <p className="modal-subtitle">Industrial Automation Division</p>
+                <h3 className="modal-title" style={{ color: 'var(--accent-copper)' }}>PROPOSAL REQUEST REGISTERED</h3>
+                <p className="modal-subtitle">School Solutions Division</p>
                 <div style={{ border: '1px solid rgba(6, 182, 212, 0.3)', padding: '25px', background: 'var(--bg-primary)', margin: '25px 0', textAlign: 'left' }}>
                   <div style={{ display: 'flex', gap: '15px', marginBottom: '15px' }}>
                     <Calendar size={16} className="text-gold" />
@@ -1342,16 +1340,16 @@ function App() {
                   </div>
                   <div style={{ display: 'flex', gap: '15px', marginBottom: '15px' }}>
                     <Activity size={16} className="text-gold" />
-                    <span style={{ fontSize: '0.85rem' }}><strong>Budget Class:</strong> {hireForm.guests}</span>
+                    <span style={{ fontSize: '0.85rem' }}><strong>School Size:</strong> {hireForm.guests}</span>
                   </div>
                   <div style={{ display: 'flex', gap: '15px', borderTop: '1px solid var(--border-dim)', paddingTop: '15px' }}>
                     <Sparkles size={16} className="text-gold" />
-                    <span style={{ fontSize: '0.85rem' }}><strong>Inquiry Event Number:</strong> <span style={{ letterSpacing: '0.1em', color: '#fff' }}><strong>#IR-RFP-{Math.floor(10000 + Math.random() * 90000)}</strong></span></span>
+                    <span style={{ fontSize: '0.85rem' }}><strong>Inquiry Reference Number:</strong> <span style={{ letterSpacing: '0.1em', color: '#fff' }}><strong>#US-PROP-{Math.floor(10000 + Math.random() * 90000)}</strong></span></span>
                   </div>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
-                  Thank you, <strong>{hireForm.name}</strong>. Your RFP requirements have been forwarded to our lead automation engineers. 
-                  A comprehensive technical and commercial proposal will be sent to <strong>{hireForm.email}</strong> within 24 hours.
+                  Thank you, <strong>{hireForm.name}</strong>. Your proposal requirements have been forwarded to our school consultants. 
+                  A custom budget proposal and onboarding outline will be sent to <strong>{hireForm.email}</strong> within 24 hours.
                 </p>
                 <button 
                   className="btn-premium-alt" 
@@ -1359,7 +1357,7 @@ function App() {
                   onClick={() => {
                     setIsHireModalOpen(false);
                     setHireSubmitted(false);
-                    setHireForm({ name: '', email: '', phone: '', date: '', guests: '₹20 Lakhs - ₹1 Crore', details: '' });
+                    setHireForm({ name: '', email: '', phone: '', date: '', guests: '200-500 Students', details: '' });
                   }}
                 >
                   RETURN TO THE PLATFORM
@@ -1382,7 +1380,7 @@ function App() {
             {!careerSubmitted ? (
               <>
                 <h3 className="modal-title">SUBMIT JOB APPLICATION</h3>
-                <p className="modal-subtitle">Join iTech Robotics Technical Division</p>
+                <p className="modal-subtitle">Join Unique Schools Product Division</p>
                 <form className="res-form" onSubmit={handleCareerSubmit}>
                   <div className="form-group form-full-width">
                     <label htmlFor="job-role">Role of Interest</label>
@@ -1403,7 +1401,7 @@ function App() {
                       required 
                       value={careerForm.name} 
                       onChange={(e) => setCareerForm({...careerForm, name: e.target.value})} 
-                      placeholder="Devendra Patil"
+                      placeholder="Sarah O'Connor"
                     />
                   </div>
 
@@ -1415,7 +1413,7 @@ function App() {
                       required 
                       value={careerForm.email} 
                       onChange={(e) => setCareerForm({...careerForm, email: e.target.value})} 
-                      placeholder="devendra@outlook.com"
+                      placeholder="sarah.oconnor@gmail.com"
                     />
                   </div>
 
@@ -1427,7 +1425,7 @@ function App() {
                       required 
                       value={careerForm.phone} 
                       onChange={(e) => setCareerForm({...careerForm, phone: e.target.value})} 
-                      placeholder="+91 9876543210"
+                      placeholder="087 123 4567"
                     />
                   </div>
 
@@ -1439,7 +1437,7 @@ function App() {
                       required
                       value={careerForm.details} 
                       onChange={(e) => setCareerForm({...careerForm, details: e.target.value})}
-                      placeholder="Describe your design tools (AutoCAD, SolidWorks) or PLC expertise (Siemens, Fanuc, Kuka)..."
+                      placeholder="Describe your technology stack, experience working with educational systems, or support workflows..."
                     />
                   </div>
 
@@ -1456,7 +1454,7 @@ function App() {
                   <Users size={60} strokeWidth={1} style={{ margin: '0 auto' }} />
                 </div>
                 <h3 className="modal-title" style={{ color: 'var(--accent-copper)' }}>APPLICATION RECEIVED</h3>
-                <p className="modal-subtitle">iTech Careers Registry</p>
+                <p className="modal-subtitle">Unique Schools Careers Registry</p>
                 <div style={{ border: '1px solid rgba(6, 182, 212, 0.3)', padding: '25px', background: 'var(--bg-primary)', margin: '25px 0', textAlign: 'left' }}>
                   <div style={{ display: 'flex', gap: '15px', marginBottom: '15px' }}>
                     <Layers size={16} className="text-gold" />
@@ -1464,12 +1462,12 @@ function App() {
                   </div>
                   <div style={{ display: 'flex', gap: '15px', borderTop: '1px solid var(--border-dim)', paddingTop: '15px' }}>
                     <Sparkles size={16} className="text-gold" />
-                    <span style={{ fontSize: '0.85rem' }}><strong>Registry Index ID:</strong> <span style={{ letterSpacing: '0.1em', color: '#fff' }}><strong>#IR-CAREER-{Math.floor(1000 + Math.random() * 9000)}</strong></span></span>
+                    <span style={{ fontSize: '0.85rem' }}><strong>Registry Index ID:</strong> <span style={{ letterSpacing: '0.1em', color: '#fff' }}><strong>#US-CAREER-{Math.floor(1000 + Math.random() * 9000)}</strong></span></span>
                   </div>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                   Thank you, <strong>{careerForm.name}</strong>. Your profile has been successfully cataloged under career reference index. 
-                  Our HR & Engineering leads will reach you at <strong>{careerForm.email}</strong> or <strong>{careerForm.phone}</strong> after technical verification.
+                  Our HR & Product leads will reach you at <strong>{careerForm.email}</strong> or <strong>{careerForm.phone}</strong> after technical verification.
                 </p>
                 <button 
                   className="btn-premium" 
@@ -1477,7 +1475,7 @@ function App() {
                   onClick={() => {
                     setIsCareerModalOpen(false);
                     setCareerSubmitted(false);
-                    setCareerForm({ name: '', email: '', phone: '', role: 'PLC Programmer', experience: '3-5 Years', details: '' });
+                    setCareerForm({ name: '', email: '', phone: '', role: 'Full-Stack Engineer', experience: '3+ Years', details: '' });
                   }}
                 >
                   RETURN TO THE PLATFORM
